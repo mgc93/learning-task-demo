@@ -1135,17 +1135,17 @@ var controlQuestion5Response = {
     choices: ['spacebar'],
     on_finish: function (data) {
         nCorrect = getAnswersQuiz(questions_data);
-        if(nCorrect<=6){ // don't exclude anybody
-            should_be_in_fullscreen = false;
-            survey_code = makeSurveyCode('failed_quiz');
-            closeFullscreen();
-            jsPsych.endExperiment(`We are sorry! Unfortunately, you have answered only ${nCorrect} questions correctly.  
-            </br> You will receive ${payFailQuiz} for making it this far. 
-            <br><br/>
-            Your completion code is <span style="color:cyan;">xxxxxx1</span>.<br/>
-            Make sure you copy this code in order to get paid!
-            <br><br/>
-            Thank you for signing up!`);
+        if(nCorrect<4){ // don't exclude anybody
+            // should_be_in_fullscreen = false;
+            // survey_code = makeSurveyCode('failed_quiz');
+            // closeFullscreen();
+            // jsPsych.endExperiment(`We are sorry! Unfortunately, you have answered only ${nCorrect} questions correctly.  
+            // </br> You will receive ${payFailQuiz} for making it this far. 
+            // <br><br/>
+            // Your completion code is <span style="color:cyan;">xxxxxx1</span>.<br/>
+            // Make sure you copy this code in order to get paid!
+            // <br><br/>
+            // Thank you for signing up!`);
             passedQuiz = 0;
         }
     }
