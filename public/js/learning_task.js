@@ -538,15 +538,15 @@ var inital_eye_calibration = {
                     calibrationAttempt++;
                     if (data.accuracy >= validationAccuracys[calibrationAttempt - 1]) success = true;
                     if (!success && calibrationAttempt == calibrationMax) {
-                        should_be_in_fullscreen = false;
-                        survey_code = makeSurveyCode('failed_short_calibration');
-                        closeFullscreen();
-                        jsPsych.endExperiment(`We are sorry! Unfortunately, the webcam calibration has failed.  We can't proceed with the study.  
-                        <br><br/>
-                        Please RETURN YOUR SUBMISSION by closing the survey and clicking <span style="color:cyan;">'Stop Without Completing'</span> on Prolific.<br/>
-                        You will get ${payFailCalibration1} for making it this far.
-                        <br><br/>
-                        Thank you for signing up!`);
+                        // should_be_in_fullscreen = false;
+                        // survey_code = makeSurveyCode('failed_short_calibration');
+                        // closeFullscreen();
+                        // jsPsych.endExperiment(`We are sorry! Unfortunately, the webcam calibration has failed.  We can't proceed with the study.  
+                        // <br><br/>
+                        // Please RETURN YOUR SUBMISSION by closing the survey and clicking <span style="color:cyan;">'Stop Without Completing'</span> on Prolific.<br/>
+                        // You will get ${payFailCalibration1} for making it this far.
+                        // <br><br/>
+                        // Thank you for signing up!`);
                         passedShortCalibration = 0;
                     }
                 }
@@ -1135,7 +1135,7 @@ var controlQuestion5Response = {
     choices: ['spacebar'],
     on_finish: function (data) {
         nCorrect = getAnswersQuiz(questions_data);
-        if(nCorrect>=0){ // don't exclude anybody
+        if(nCorrect<=6){ // don't exclude anybody
             should_be_in_fullscreen = false;
             survey_code = makeSurveyCode('failed_quiz');
             closeFullscreen();
@@ -1284,16 +1284,16 @@ var recalibration = {
                     recalibrationAttempt++;
                     if (data.accuracy >= validationAccuracys[recalibrationAttempt - 1]) resuccess = true;
                     if (!resuccess && recalibrationAttempt == recalibrationMax) {
-                        should_be_in_fullscreen = false;
-                        survey_code = makeSurveyCode('failed_long_calibration');
-                        closeFullscreen();
-                        jsPsych.endExperiment(`Sorry, unfortunately the webcam calibration has failed.  We can't proceed with the study.  
-                        </br> You will receive ${payFailCalibration2} for making it this far. 
-                        <br><br/>
-                        Your completion code is <span style="color:cyan;">xxxxxxx2</span>.<br/>
-                        Make sure you copy this code in order to get paid!
-                        <br><br/>
-                        Thank you for signing up!`);
+                        // should_be_in_fullscreen = false;
+                        // survey_code = makeSurveyCode('failed_long_calibration');
+                        // closeFullscreen();
+                        // jsPsych.endExperiment(`Sorry, unfortunately the webcam calibration has failed.  We can't proceed with the study.  
+                        // </br> You will receive ${payFailCalibration2} for making it this far. 
+                        // <br><br/>
+                        // Your completion code is <span style="color:cyan;">xxxxxxx2</span>.<br/>
+                        // Make sure you copy this code in order to get paid!
+                        // <br><br/>
+                        // Thank you for signing up!`);
                         passedLongCalibration = 0;
                     }
                 }
