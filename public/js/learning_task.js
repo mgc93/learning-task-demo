@@ -1135,7 +1135,7 @@ var controlQuestion5Response = {
     choices: ['spacebar'],
     on_finish: function (data) {
         nCorrect = getAnswersQuiz(questions_data);
-        if(nCorrect<4){
+        if(nCorrect>=0){ // don't exclude anybody
             should_be_in_fullscreen = false;
             survey_code = makeSurveyCode('failed_quiz');
             closeFullscreen();
@@ -2309,9 +2309,9 @@ function startExperiment() {
             //recalibration2,
             //learning_choice_2,
             memoryOverview,
-            //memoryQuizPart1,
-            //memoryQuizPart2,
-            //memoryQuizPart3,
+            memoryQuizPart1,
+            memoryQuizPart2,
+            memoryQuizPart3,
             fullscreenExit,
             success_guard
         ],
