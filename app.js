@@ -22,12 +22,12 @@ const body_parser = require("body-parser");
 
 
 // var sdk = new BoxSDK( {
-//     clientID: 'REDACTED',
-//     clientSecret: 'REDACTED'
+//     clientID: process.env.BOX_CLIENT_ID,
+//     clientSecret: process.env.BOX_CLIENT_SECRET
 // });
 
 // Create a basic API client, which does not automatically refresh the access token
-//var client = sdk.getBasicClient('REDACTED');
+//var client = sdk.getBasicClient(process.env.BOX_DEVELOPER_TOKEN);
 
 //var folderID = '0';
 
@@ -39,7 +39,7 @@ const body_parser = require("body-parser");
 // };
 
 const dbx = new Dropbox({
-    accessToken: 'REDACTED_DROPBOX_TOKEN',
+    accessToken: process.env.DROPBOX_ACCESS_TOKEN,
     fetch
 });
 
